@@ -30,11 +30,7 @@ form.addEventListener('submit', onSubmit);
 loadMoreBtn.button.addEventListener('click', onLoadMore);
 
 let lightbox = null;
-/**
-  |============================
-  | function appendImages
-  |============================
-*/
+
 async function appendImages() {
   const currentPage = imagesAPIService.page;
 
@@ -60,11 +56,6 @@ async function appendImages() {
   }
   loadMoreBtn.enable();
 }
-/**
-  |============================
-  | function onLoadMore
-  |============================
-*/
 
 function onLoadMore() {
   loadMoreBtn.disable();
@@ -73,11 +64,7 @@ function onLoadMore() {
   lightbox.refresh();
 }
 
-/**
-  |============================
-  | function onSubmit
-  |============================
-*/
+
 
 function onSubmit(e) {
   e.preventDefault();
@@ -97,11 +84,7 @@ function onSubmit(e) {
     .catch(onError)
     .finally(() => form.reset());
 }
-/**
-  |============================
-  | Other functions
-  |============================
-*/
+
 function checkingLightbox() {
   if (!lightbox) {
     lightbox = new SimpleLightbox('.gallery a', {
